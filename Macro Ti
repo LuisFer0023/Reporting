@@ -1,0 +1,80 @@
+Private Sub CommandButton1_Click()
+Sheets("SDN BRJ").Activate
+If TextBox2 = "" Or TextBox3 = "" Or TextBox5 = "" Or TextBox7 = "" Or TextBox13 = "" _
+Or TextBox15 = "" Or TextBox14 = "" Or TextBox16 = "" Then
+MsgBox "Está dejando campos requeridos vacios", vbExclamation, "Error"
+TextBox3.SetFocus
+Else
+Range("A" & Cells.Rows.Count).End(xlUp).Offset(1).Select
+ActiveCell = TextBox2.Value
+ActiveCell.Offset(0, 1) = TextBox3.Value
+ActiveCell.Offset(0, 2) = TextBox5.Value
+ActiveCell.Offset(0, 3) = TextBox15.Value
+ActiveCell.Offset(0, 4) = TextBox7.Value
+ActiveCell.Offset(0, 5) = TextBox13.Value
+ActiveCell.Offset(0, 6) = TextBox14.Value
+ActiveCell.Offset(0, 7) = TextBox16.Value
+MsgBox "RCA ingresado exitosamente", vbInformation, "Servitap"
+TextBox2 = ""
+TextBox3 = ""
+TextBox5 = ""
+TextBox15 = ""
+TextBox7 = ""
+TextBox13 = ""
+TextBox14 = ""
+TextBox16 = ""
+TextBox2.SetFocus
+End If
+End Sub
+Private Sub CommandButton4_Click()
+Unload Me
+End Sub
+Private Sub CommandButton5_Click()
+Unload Me
+BuscaSDN.Show
+End Sub
+
+Private Sub CommandButton6_Click()
+Unload Me
+eliminaSDN.Show
+End Sub
+
+Private Sub Label1_Click()
+
+End Sub
+
+Private Sub Label15_Click()
+
+End Sub
+
+Private Sub Label2_Click()
+
+End Sub
+
+Private Sub TextBox2_Exit(ByVal Cancel As MSForms.ReturnBoolean)
+If Len(TextBox2) = 9 Then
+TextBox2 = 0 & TextBox2
+CommandButton2.Enabled = True
+Exit Sub
+Else
+End If
+End Sub
+
+Private Sub TextBox5_Change()
+End Sub
+
+Private Sub TextBox7_KeyPress(ByVal KeyAscii As MSForms.ReturnInteger)
+End Sub
+Private Sub TextBox15_KeyPress(ByVal KeyAscii As MSForms.ReturnInteger)
+End Sub
+Private Sub TextBox14_KeyPress(ByVal KeyAscii As MSForms.ReturnInteger)
+End Sub
+
+Private Sub TextBox2_KeyPress(ByVal KeyAscii As MSForms.ReturnInteger)
+End Sub
+
+Private Sub UserForm_Click()
+
+End Sub
+
+
